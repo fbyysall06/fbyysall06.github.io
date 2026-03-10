@@ -3,132 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dimsum Mentai Joss | Jajanan Enak</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <title>Dimsum Mentai Joss | Jajanan Hits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #FF7043; /* Oranye Cerah */
-            --secondary: #FFB74D;
-            --bg: #FFF9F0; /* Krem Lembut */
-            --text: #4E342E;
+            --primary-orange: #FF7043;
+            --soft-yellow: #FFCA28;
+            --dark-brown: #3E2723;
+            --light-bg: #FFFAF2;
+            --wa-green: #25D366;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Quicksand', sans-serif; }
+        body { background-color: var(--light-bg); color: var(--dark-brown); font-family: 'Lexend', sans-serif; overflow-x: hidden; }
 
+        /* Header / Hero */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary-orange), var(--soft-yellow));
             color: white;
             text-align: center;
-            padding: 50px 20px;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 60px 20px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 10px 30px rgba(255, 112, 67, 0.3);
         }
 
-        h1 { font-family: 'Fredoka', sans-serif; font-size: 2.5rem; margin-bottom: 10px; }
-        .tagline { font-style: italic; opacity: 0.9; }
+        .logo-header { width: 150px; border-radius: 50%; border: 4px solid white; margin-bottom: 15px; }
+        h1 { font-family: 'Fredoka', sans-serif; font-size: 2.8rem; margin-bottom: 5px; }
+        .tagline { font-size: 1.1rem; font-weight: 400; opacity: 0.9; }
 
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        /* Container Menu */
+        .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
+        .section-title { text-align: center; font-family: 'Fredoka', sans-serif; font-size: 2.2rem; margin-bottom: 40px; color: var(--primary-orange); position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--soft-yellow); margin: 10px auto; border-radius: 2px; }
 
-        .menu-title { text-align: center; font-family: 'Fredoka', sans-serif; font-size: 2rem; margin-bottom: 30px; color: var(--primary); }
-
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        /* Grid Kartu Menu */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
         .menu-card { 
             background: white; 
-            border-radius: 25px; 
+            border-radius: 30px; 
             overflow: hidden; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
-            transition: 0.3s;
-            border: 2px solid transparent;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07); 
+            transition: all 0.4s ease;
+            position: relative;
         }
-        .menu-card:hover { transform: translateY(-10px); border-color: var(--secondary); }
+        .menu-card:hover { transform: translateY(-12px); box-shadow: 0 20px 45px rgba(0,0,0,0.12); }
 
-        .menu-img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+        .badge-price { position: absolute; top: 20px; right: 20px; background: var(--primary-orange); color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold; z-index: 2; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
-        .menu-info { padding: 20px; text-align: center; }
-        .menu-info h3 { margin-bottom: 10px; font-size: 1.3rem; }
-        .price { font-weight: 700; color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; display: block; }
+        .menu-img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.5s ease; }
+        .menu-card:hover .menu-img { transform: scale(1.08); }
+
+        .menu-info { padding: 25px; text-align: center; }
+        .menu-info h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--dark-brown); }
+        .menu-info p { font-size: 0.95rem; color: #6d4c41; margin-bottom: 20px; line-height: 1.4; }
 
         .btn-wa { 
-            display: inline-block; 
-            background-color: #25D366; 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--wa-green); 
             color: white; 
-            padding: 10px 20px; 
+            padding: 12px 25px; 
             border-radius: 50px; 
             text-decoration: none; 
-            font-weight: bold; 
+            font-weight: 700; 
             transition: 0.3s;
+            width: 100%;
         }
-        .btn-wa:hover { background-color: #128C7E; transform: scale(1.05); }
+        .btn-wa:hover { background-color: #1ebe5d; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
 
-        .contact-section { background: white; margin-top: 50px; padding: 30px; border-radius: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .social-links a { margin: 0 15px; font-size: 1.5rem; color: var(--primary); text-decoration: none; }
+        /* Bagian Kontak & Sosmed */
+        .footer-info { background: white; margin-top: 60px; padding: 40px; border-radius: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .social-box { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
+        .social-box a { text-decoration: none; color: var(--dark-brown); font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
+        .social-box a:hover { color: var(--primary-orange); }
+        .social-box i { font-size: 1.5rem; margin-right: 8px; color: var(--primary-orange); }
 
-        footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; }
+        footer { text-align: center; padding: 40px; color: #a1887f; font-size: 0.9rem; }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Dimsum Mentai Joss 🥟</h1>
-    <p class="tagline">Enak, Murah, Kenyang - Jajanan Paling Hits!</p>
+    <img src="https://fbyysall06.github.io/Gemini_Generated_Image_6of3mj6of3mj6of3.jpg" alt="Logo Dimsum Mentai Joss" class="logo-header">
+    <h1>Dimsum Mentai Joss</h1>
+    <p class="tagline">Enak, Murah, Kenyang • Jajanan Wanguk Paling Hits!</p>
 </header>
 
 <div class="container">
-    <h2 class="menu-title">Pilih Menu Favoritmu</h2>
+    <h2 class="section-title">Menu Favorit Joss</h2>
     
     <div class="menu-grid">
         <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=500&q=80" alt="Dimsum Mentai" class="menu-img">
+            <div class="badge-price">20k</div>
+            <img src="https://fbyysall06.github.io/f1fcfda9ef7910c802e25a64d7e03997.jpg" alt="Dimsum Goreng Mentai" class="menu-img">
             <div class="menu-info">
-                <h3>Dimsum Goreng Mentai (Isi 4)</h3>
-                <span class="price">Rp 20.000</span>
-                <a href="https://wa.me/6283183424588?text=Halo%20Feby%2C%20saya%20mau%20pesan%20Dimsum%20Goreng%20Mentai%20Isi%204" class="btn-wa">
-                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                <h3>Dimsum Goreng Mentai</h3>
+                <p>Isi 4 pcs. Dimsum goreng renyah dengan lelehan saus mentai gurih yang melimpah.</p>
+                <a href="https://wa.me/6283183424588?text=Halo%20Feby%2C%20saya%20mau%20pesan%20Dimsum%20Goreng%20Mentai%20isi%204" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Pesan ke WhatsApp
                 </a>
             </div>
         </div>
 
         <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&w=500&q=80" alt="Dimsum Mentai" class="menu-img">
+            <div class="badge-price">25k</div>
+            <img src="https://fbyysall06.github.io/cc9379e2e128a90a47f9754bae786fcf.jpg" alt="Dimsum Mentai Isi 6" class="menu-img">
             <div class="menu-info">
-                <h3>Dimsum Mentai (Isi 6)</h3>
-                <span class="price">Rp 25.000</span>
-                <a href="https://wa.me/6283183424588?text=Halo%20Feby%2C%20saya%20mau%20pesan%20Dimsum%20Mentai%20Isi%206" class="btn-wa">
-                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                <h3>Dimsum Mentai Premium</h3>
+                <p>Isi 6 pcs. Porsi lebih puas! Dimsum lembut dikukus dengan topping mentai yang dibakar (torched).</p>
+                <a href="https://wa.me/6283183424588?text=Halo%20Feby%2C%20saya%20mau%20pesan%20Dimsum%20Mentai%20isi%206" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Pesan ke WhatsApp
                 </a>
             </div>
         </div>
 
         <div class="menu-card">
-            <img src="https://images.unsplash.com/photo-1563245394-57d5c0278c23?auto=format&fit=crop&w=500&q=80" alt="Dimsum Biasa" class="menu-img">
+            <div class="badge-price">15k - 20k</div>
+            <img src="https://fbyysall06.github.io/acd7abd458dda9c590f38c97a410d101.jpg" alt="Dimsum Biasa" class="menu-img">
             <div class="menu-info">
-                <h3>Dimsum Biasa</h3>
-                <p>Isi 4-6 pcs</p>
-                <span class="price">Rp 15k - 20k</span>
+                <h3>Dimsum Original</h3>
+                <p>Isi 4-6 pcs. Rasa daging ayam asli dengan topping wortel, segar dan sehat!</p>
                 <a href="https://wa.me/6283183424588?text=Halo%20Feby%2C%20saya%20mau%20pesan%20Dimsum%20Biasa" class="btn-wa">
-                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                    <i class="fab fa-whatsapp"></i> Pesan ke WhatsApp
                 </a>
             </div>
         </div>
     </div>
 
-    <div class="contact-section">
-        <h3>Hubungi Kami</h3>
-        <p>Wanguk Blok Lonyod Wetan</p>
-        <div class="social-links">
-            <a href="https://instagram.com/fbyysall"><i class="fab fa-instagram"></i> @fbyysall</a>
+    <div class="footer-info">
+        <h3>Lokasi & Pesanan</h3>
+        <p><i class="fas fa-map-marker-alt" style="color:var(--primary-orange)"></i> Wanguk Blok Lonyod Wetan</p>
+        <div class="social-box">
+            <a href="https://instagram.com/fbyysall" target="_blank"><i class="fab fa-instagram"></i> @fbyysall</a>
             <a href="https://wa.me/6283183424588"><i class="fab fa-whatsapp"></i> 0831-8342-4588</a>
         </div>
     </div>
 </div>
 
 <footer>
-    &copy; 2026 Dimsum Mentai Joss oleh Feby Salsa Nabila.
+    &copy; 2026 Dimsum Mentai Joss. Dibuat dengan cinta oleh Feby Salsa Nabila.
 </footer>
 
 </body>
