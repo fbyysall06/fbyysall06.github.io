@@ -28,7 +28,6 @@
             border-bottom-right-radius: 40px;
         }
 
-        /* PERBAIKAN LOGO */
         .logo-container {
             background: white;
             width: 140px;
@@ -43,11 +42,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Agar logo tidak terpotong */
-        }
+        .logo-img { width: 100%; height: 100%; object-fit: contain; }
 
         h1 { font-family: 'Fredoka', sans-serif; font-size: 2.2rem; margin-bottom: 5px; }
         .tagline { font-size: 1rem; opacity: 0.9; }
@@ -65,7 +60,7 @@
             position: relative;
         }
 
-        .badge-price { position: absolute; top: 15px; right: 15px; background: var(--primary-orange); color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+        .badge-price { position: absolute; top: 15px; right: 15px; background: var(--primary-orange); color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; z-index: 10; }
 
         .menu-img { width: 100%; height: 220px; object-fit: cover; }
 
@@ -74,14 +69,19 @@
         .menu-info p { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
 
         .btn-wa { 
-            display: block; 
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             background-color: var(--wa-green); 
             color: white; 
             padding: 12px; 
             border-radius: 50px; 
             text-decoration: none; 
             font-weight: bold;
+            transition: 0.3s;
         }
+        .btn-wa:hover { background-color: #128C7E; transform: scale(1.03); }
 
         .footer-info { text-align: center; margin-top: 40px; padding: 20px; }
         .social-box a { text-decoration: none; color: var(--primary-orange); font-weight: bold; margin: 0 10px; }
@@ -106,8 +106,10 @@
             <img src="f1fcfda9ef7910c802e25a64d7e03997.jpg" alt="Dimsum Goreng Mentai" class="menu-img">
             <div class="menu-info">
                 <h3>Dimsum Goreng Mentai</h3>
-                <p>Isi 4 pcs. Perpaduan dimsum renyah dengan saus mentai creamy yang lumer.</p>
-                <a href="https://wa.me/6283183424588" class="btn-wa">Pesan ke WhatsApp</a>
+                <p>Isi 4 pcs. Perpaduan dimsum renyah dengan saus mentai creamy.</p>
+                <a href="https://wa.me/6283183424588?text=halo%20feby%2C%20aku%20mau%20beli%20dimsum%20goreng%20mentai" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                </a>
             </div>
         </div>
 
@@ -116,8 +118,10 @@
             <img src="cc9379e2e128a90a47f9754bae786fcf.jpg" alt="Dimsum Mentai" class="menu-img">
             <div class="menu-info">
                 <h3>Dimsum Mentai Isi 6</h3>
-                <p>Isi 6 pcs. Dimsum kukus lembut dengan topping mentai yang dibakar.</p>
-                <a href="https://wa.me/6283183424588" class="btn-wa">Pesan ke WhatsApp</a>
+                <p>Isi 6 pcs. Dimsum kukus lembut dengan topping mentai torched.</p>
+                <a href="https://wa.me/6283183424588?text=halo%20feby%2C%20aku%20mau%20beli%20dimsum%20mentai%20isi%206" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                </a>
             </div>
         </div>
 
@@ -125,20 +129,5 @@
             <div class="badge-price">15k-20k</div>
             <img src="acd7abd458dda9c590f38c97a410d101.jpg" alt="Dimsum Biasa" class="menu-img">
             <div class="menu-info">
-                <h3>Dimsum Original</h3>
-                <p>Isi 4-6 pcs. Dimsum ayam original dengan parutan wortel segar.</p>
-                <a href="https://wa.me/6283183424588" class="btn-wa">Pesan ke WhatsApp</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-info">
-        <p>Wanguk Blok Lonyod Wetan</p>
-        <div class="social-box">
-            <a href="https://instagram.com/fbyysall"><i class="fab fa-instagram"></i> @fbyysall</a>
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
+                <h3>Dimsum Biasa</h3>
+                <p>Isi 4-6
