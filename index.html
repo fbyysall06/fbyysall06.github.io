@@ -1,13 +1,255 @@
-<!DOCTYPE html>
+Percakapan dengan Gemini
+Anda berkata
+buatlah website portofolio
 
-<html>
+
+
+*Feby Salsa Nabila*
+
+
+
+*tentang diri*
+
+buatlah lampiran sebagai foto profil https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410013/1773117163_f6feb43c.jpg
+
+Saya adalah seorang yang dinamis dan memiliki minat dalam berbagai bidang, termasuk beladiri dan petualangan. Saya suka mencoba hal baru dan memiliki kemampuan dalam menguasai teknologi, dan saya juga suka naik gunung, umur 19 tahun
+
+
+
+*Pendidikan*
+
+
+
+- Sekolah Dasar: SDN Wanguk 1
+
+- Sekolah Menengah Pertama: SMP Negeri 2 Anjatan
+
+- Sekolah Menengah Kejuruan: SMK Al-Irsyad Al-Islamiyyah
+
+
+
+*Keahlian*
+
+
+
+- MS Office (Word, Excel, PowerPoint)
+
+- Typing Master dan pengetikan komputer
+
+
+
+*Pengalaman*
+
+
+
+- Praktik Kerja Lapangan (PKL)
+
+- Membantu mengisi data konsumen
+
+- Resepsionis
+
+- Mengarsip dokumen
+
+
+
+*Penghargaan*
+
+
+
+- Juara dalam kejuaraan pencak silat
+
+- Pelatih silat untuk anak sekolah
+
+
+
+*Kontak*
+
+
+
+- Alamat: Wanguk Blok Lonyod Wetan
+
+- Instagram: @fbyysall
+
+
+
+*sertifikat*
+
+memiliki sertifikat silat
+
+sertifikat osis
+
+sertifikat pkl
+
+
+
+Testimonial
+
+(siapa saja dapat mengomentari dengan nama guest atau nama dengan di ketik manual)
+
+Gemini berkata
+Tentu, ini adalah draf struktur kode HTML dan CSS untuk website portofolio yang bersih, modern, dan responsif. Kamu bisa menggunakan kode ini di platform seperti CodePen atau menyimpannya sebagai file .html.
+
+Kode Portofolio (HTML & CSS)
+HTML
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Hello,World!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Feby Salsa Nabila</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --light: #f4f7f6;
+            --dark: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .container { max-width: 900px; margin: -40px auto 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        section { margin-bottom: 40px; }
+        h2 { border-bottom: 3px solid var(--accent); display: inline-block; margin-bottom: 20px; padding-bottom: 5px; color: var(--primary); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: #fff; padding: 20px; border-left: 5px solid var(--accent); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+        .skill-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+
+        .testimonial-box { margin-top: 20px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+        #comment-list { list-style: none; margin-bottom: 20px; }
+        #comment-list li { padding: 10px; border-bottom: 1px solid #ddd; font-style: italic; }
+
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        button:hover { background: var(--accent); }
+
+        footer { text-align: center; padding: 20px; font-size: 0.9em; color: #777; }
+    </style>
 </head>
 <body>
-  <h1>
-    Hello, nama saya feby salsa nabila
-  </h1>
+
+<header>
+    <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410013/1773117163_f6feb43c.jpg" alt="Feby Salsa Nabila" class="profile-img">
+    <h1>Feby Salsa Nabila</h1>
+    <p>Pencak Silat Practitioner | Tech Enthusiast | Adventurer</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2>Tentang Diri</h2>
+        <p>Saya adalah seorang yang dinamis berusia 19 tahun dengan minat besar dalam bidang beladiri dan petualangan. Saya senang mengeksplorasi hal-hal baru, memiliki kemampuan adaptasi teknologi yang baik, dan sangat menyukai kegiatan mendaki gunung.</p>
+    </section>
+
+    <div class="grid">
+        <section>
+            <h2>Pendidikan</h2>
+            <ul>
+                <li><strong>SMK Al-Irsyad Al-Islamiyyah</strong></li>
+                <li>SMP Negeri 2 Anjatan</li>
+                <li>SDN Wanguk 1</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Pengalaman Kerja</h2>
+            <ul>
+                <li>Praktik Kerja Lapangan (PKL)</li>
+                <li>Resepsionis & Administrasi</li>
+                <li>Manajemen Data Konsumen & Arsip</li>
+            </ul>
+        </section>
+    </div>
+
+    <section>
+        <h2>Keahlian & Sertifikat</h2>
+        <div>
+            <span class="skill-badge">MS Word</span>
+            <span class="skill-badge">MS Excel</span>
+            <span class="skill-badge">MS PowerPoint</span>
+            <span class="skill-badge">Typing Master</span>
+            <span class="skill-badge">Pencak Silat</span>
+        </div>
+        <div style="margin-top: 15px;">
+            <p><i class="fas fa-certificate"></i> Sertifikat: Silat, OSIS, & PKL</p>
+            <p><i class="fas fa-trophy"></i> Juara Kejuaraan Pencak Silat & Pelatih Silat</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Kontak</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Wanguk Blok Lonyod Wetan</p>
+        <p><i class="fab fa-instagram"></i> @fbyysall</p>
+    </section>
+
+    <hr>
+
+    <section class="testimonial-box">
+        <h2>Testimonial</h2>
+        <ul id="comment-list">
+            <li>"Sangat profesional dalam bekerja!" - Guest</li>
+        </ul>
+        <h3>Tinggalkan Pesan</h3>
+        <input type="text" id="name" placeholder="Nama Anda (Kosongkan untuk Guest)">
+        <textarea id="comment" placeholder="Tulis komentar..."></textarea>
+        <button onclick="addComment()">Kirim Komentar</button>
+    </section>
+</div>
+
+<footer>
+    &copy; 2026 Feby Salsa Nabila. Built with Passion.
+</footer>
+
+<script>
+    function addComment() {
+        const nameInput = document.getElementById('name').value;
+        const commentInput = document.getElementById('comment').value;
+        const commentList = document.getElementById('comment-list');
+        
+        if (commentInput.trim() === "") {
+            alert("Komentar tidak boleh kosong!");
+            return;
+        }
+
+        const name = nameInput.trim() === "" ? "Guest" : nameInput;
+        const newComment = document.createElement('li');
+        newComment.innerHTML = `"${commentInput}" - <strong>${name}</strong>`;
+        
+        commentList.appendChild(newComment);
+        
+        // Reset input
+        document.getElementById('name').value = "";
+        document.getElementById('comment').value = "";
+    }
+</script>
+
 </body>
 </html>
